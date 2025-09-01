@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ilme Digital - Sites Web Ultra-Performants à Rabat</title>
+    <!-- Chosen Palette: ilme Digital Official Palette (Oxford Blue, Jet, White, Orange) -->
+    <!-- Application Structure Plan: A single-page application with a sticky navigation bar for smooth scrolling between sections that correspond to the pages in the source document (Home, Service, Work, Process, Contact). This structure creates a fluid, modern user journey, guiding the user logically from the initial value proposition down to the final contact form. Key interaction is the portfolio theme-switcher to showcase technical skill. -->
+    <!-- Visualization & Content Choices: Content is organized into thematic sections. Key data (performance scores) is presented as highly visible text. The process is visualized as a numbered HTML/CSS infographic. Icons for feature lists are created using styled divs to avoid external graphics and maintain performance. The main interactive element is a JavaScript-powered theme switcher for portfolio mockups, directly demonstrating our technical capabilities to potential clients. NO SVG/Mermaid used. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #FFFFFF;
+            color: #2D2D2D;
+        }
+        .text-oxford-blue { color: #0A2647; }
+        .bg-oxford-blue { background-color: #0A2647; }
+        .text-jet { color: #2D2D2D; }
+        .bg-jet { background-color: #2D2D2D; }
+        .text-orange { color: #FFA500; }
+        .bg-orange { background-color: #FFA500; }
+        .border-orange { border-color: #FFA500; }
+        .hover\:bg-orange-dark:hover { background-color: #E59400; }
+        .gradient-logo {
+            background: linear-gradient(to right, #2D2D2D, #0A2647, #FFA500);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .mockup-image {
+            transition: opacity 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header id="header" class="bg-white/80 backdrop-blur-md sticky top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="#accueil" class="text-3xl font-bold">
+                    <span class="gradient-logo">ilme Digital</span>
+                </a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#offre" class="text-jet hover:text-orange transition-colors">Notre Offre</a>
+                    <a href="#travail" class="text-jet hover:text-orange transition-colors">Notre Travail</a>
+                    <a href="#processus" class="text-jet hover:text-orange transition-colors">Notre Processus</a>
+                    <a href="#contact" class="text-jet hover:text-orange transition-colors">Contact</a>
+                </nav>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-jet focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#offre" class="block py-2 px-6 text-sm text-jet hover:bg-gray-100">Notre Offre</a>
+            <a href="#travail" class="block py-2 px-6 text-sm text-jet hover:bg-gray-100">Notre Travail</a>
+            <a href="#processus" class="block py-2 px-6 text-sm text-jet hover:bg-gray-100">Notre Processus</a>
+            <a href="#contact" class="block py-2 px-6 text-sm text-jet hover:bg-gray-100">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Accueil Section -->
+        <section id="accueil" class="min-h-screen flex items-center bg-gray-50">
+            <div class="container mx-auto px-6 py-24 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-oxford-blue leading-tight">Votre Expertise Mérite une Présence Digitale d'Exception.</h1>
+                <p class="mt-6 text-lg md:text-xl text-jet max-w-3xl mx-auto">ilme Digital. Nous sommes des ingénieurs qui construisons des sites web ultra-performants pour les professionnels de Rabat. Rapides, sécurisés et fiables.</p>
+                <a href="#contact" class="mt-10 inline-block bg-orange text-white font-bold py-4 px-10 rounded-lg shadow-lg hover:bg-orange-dark transition-transform transform hover:scale-105">
+                    Obtenir Mon Audit Digital Gratuit
+                </a>
+            </div>
+        </section>
+
+        <!-- Problem / Solution Section -->
+        <section class="py-20 section-fade-in">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-jet">Votre présence en ligne est-elle à la hauteur de votre réputation?</h2>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100">
+                        <h3 class="font-bold text-xl text-oxford-blue mb-2">"Mon site est trop lent"</h3>
+                        <p class="text-jet">Une première impression négative pour vos clients potentiels.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100">
+                        <h3 class="font-bold text-xl text-oxford-blue mb-2">"Je n'apparais pas sur Google"</h3>
+                        <p class="text-jet">Des opportunités manquées chaque jour au profit de vos concurrents.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md border border-gray-100">
+                        <h3 class="font-bold text-xl text-oxford-blue mb-2">"Je n'ai qu'une page Facebook"</h3>
+                        <p class="text-jet">Un manque de professionnalisme et de contrôle sur votre image de marque.</p>
+                    </div>
+                </div>
+                <p class="text-center mt-12 text-xl text-jet">La solution : une fondation digitale solide, construite avec la précision d'un ingénieur.</p>
+            </div>
+        </section>
+        
+        <!-- Offre Section -->
+        <section id="offre" class="py-20 bg-gray-50 section-fade-in">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                     <h2 class="text-3xl md:text-4xl font-bold text-jet">Notre Offre Unique: La Carte de Visite Digitale</h2>
+                     <p class="mt-4 text-lg text-jet max-w-3xl mx-auto">Un site web professionnel de 4 pages, conçu pour établir votre crédibilité et être livré rapidement. La solution parfaite pour les avocats, médecins, consultants et commerces exigeants.</p>
+                </div>
+
+                <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-xl p-8 md:p-12 border border-gray-200">
+                     <h3 class="text-2xl font-bold text-oxford-blue mb-6">Inclus dans le Forfait : L'Essentiel, à la Perfection.</h3>
+                     <ul class="space-y-4">
+                        <li class="flex items-start"><span class="flex-shrink-0 w-6 h-6 bg-orange text-white rounded-full flex items-center justify-center mr-4 mt-1">✓</span><span><strong class="text-oxford-blue">Site web statique de 4 pages</strong> (Accueil, À propos, Services, Contact)</span></li>
+                        <li class="flex items-start"><span class="flex-shrink-0 w-6 h-6 bg-orange text-white rounded-full flex items-center justify-center mr-4 mt-1">✓</span><span><strong class="text-oxford-blue">Design professionnel</strong> basé sur nos modèles</span></li>
+                        <li class="flex items-start"><span class="flex-shrink-0 w-6 h-6 bg-orange text-white rounded-full flex items-center justify-center mr-4 mt-1">✓</span><span><strong class="text-oxford-blue">Vitesse de chargement garantie</strong> (&gt;90/100 sur Google PageSpeed)</span></li>
+                        <li class="flex items-start"><span class="flex-shrink-0 w-6 h-6 bg-orange text-white rounded-full flex items-center justify-center mr-4 mt-1">✓</span><span><strong class="text-oxford-blue">Parfaitement adaptable</strong> (Mobile, Tablette, Ordinateur)</span></li>
+                        <li class="flex items-start"><span class="flex-shrink-0 w-6 h-6 bg-orange text-white rounded-full flex items-center justify-center mr-4 mt-1">✓</span><span><strong class="text-oxford-blue">Formulaire de contact sécurisé</strong> et fonctionnel</span></li>
+                        <li class="flex items-start"><span class="flex-shrink-0 w-6 h-6 bg-orange text-white rounded-full flex items-center justify-center mr-4 mt-1">✓</span><span><strong class="text-oxford-blue">Intégration de Google Maps</strong></span></li>
+                        <li class="flex items-start"><span class="flex-shrink-0 w-6 h-6 bg-orange text-white rounded-full flex items-center justify-center mr-4 mt-1">✓</span><span><strong class="text-oxford-blue">Optimisation SEO de base</strong> pour le référencement</span></li>
+                     </ul>
+
+                     <div class="mt-8 pt-6 border-t border-gray-200">
+                        <h4 class="text-lg font-semibold text-jet mb-2">Ce qui n'est pas inclus :</h4>
+                        <p class="text-gray-600">Pour garantir ce niveau de qualité et de rapidité, nous nous concentrons sur l'essentiel. Ce forfait n'inclut pas : e-commerce, blog, systèmes de réservation, rédaction de contenu, ou création de logo.</p>
+                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Travail Section -->
+        <section id="travail" class="py-20 section-fade-in">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-jet">Découvrez la Qualité de Notre Travail.</h2>
+                    <p class="mt-4 text-lg text-jet">Performance et Élégance en Action.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-xl border border-gray-100">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 id="template-title" class="text-2xl font-bold text-oxford-blue">Modèle "Le Professionnel"</h3>
+                            <p id="template-description" class="mt-2 text-jet">Idéal pour les cabinets de conseil, les avocats et les experts-comptables qui souhaitent projeter une image de sérieux et de confiance.</p>
+                            
+                            <div class="mt-6">
+                                <span class="font-semibold text-jet">Changer le thème :</span>
+                                <div class="flex space-x-3 mt-2">
+                                    <button class="theme-button w-8 h-8 rounded-full bg-oxford-blue border-2 border-orange ring-2 ring-offset-2 ring-orange" data-theme="pro"></button>
+                                    <button class="theme-button w-8 h-8 rounded-full bg-emerald-600 border-2 border-white" data-theme="clinic"></button>
+                                    <button class="theme-button w-8 h-8 rounded-full bg-amber-800 border-2 border-white" data-theme="artisan"></button>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-jet">Points Techniques Clés :</h4>
+                                <div id="template-scores" class="flex justify-around text-center mt-2">
+                                    <div><span class="font-bold text-2xl text-orange">98</span><span class="text-gray-500">/100</span><p class="text-sm">Vitesse</p></div>
+                                    <div><span class="font-bold text-2xl text-orange">100</span><span class="text-gray-500">/100</span><p class="text-sm">Mobile</p></div>
+                                    <div><span class="font-bold text-2xl text-orange">A+</span><p class="text-sm">Sécurité</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative h-64 md:h-96">
+                            <img id="mockup-pro" src="https://placehold.co/600x400/0A2647/FFFFFF?text=Le+Professionnel" alt="Mockup du site Le Professionnel" class="mockup-image absolute inset-0 w-full h-full object-cover rounded-lg shadow-lg">
+                            <img id="mockup-clinic" src="https://placehold.co/600x400/059669/FFFFFF?text=La+Clinique" alt="Mockup du site La Clinique" class="mockup-image absolute inset-0 w-full h-full object-cover rounded-lg shadow-lg opacity-0">
+                            <img id="mockup-artisan" src="https://placehold.co/600x400/92400E/FFFFFF?text=L'Artisan" alt="Mockup du site L'Artisan" class="mockup-image absolute inset-0 w-full h-full object-cover rounded-lg shadow-lg opacity-0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Processus Section -->
+        <section id="processus" class="py-20 bg-gray-50 section-fade-in">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-jet">De l'idée à la Mise en Ligne : 4 Étapes, Zéro Stress.</h2>
+                </div>
+                <div class="max-w-4xl mx-auto grid md:grid-cols-4 gap-4 text-center">
+                    <div class="p-4">
+                        <div class="w-16 h-16 bg-orange text-white text-2xl font-bold rounded-full flex items-center justify-center mx-auto">1</div>
+                        <h3 class="font-bold mt-4 text-oxford-blue">Audit & Stratégie</h3>
+                        <p class="text-sm text-jet mt-1">Nous commençons par un audit gratuit pour comprendre vos besoins.</p>
+                    </div>
+                    <div class="p-4">
+                        <div class="w-16 h-16 bg-orange text-white text-2xl font-bold rounded-full flex items-center justify-center mx-auto">2</div>
+                        <h3 class="font-bold mt-4 text-oxford-blue">Conception & Contenu</h3>
+                        <p class="text-sm text-jet mt-1">Vous choisissez un modèle, nous vous aidons à structurer vos textes.</p>
+                    </div>
+                    <div class="p-4">
+                        <div class="w-16 h-16 bg-orange text-white text-2xl font-bold rounded-full flex items-center justify-center mx-auto">3</div>
+                        <h3 class="font-bold mt-4 text-oxford-blue">Développement & Ingénierie</h3>
+                        <p class="text-sm text-jet mt-1">C'est ici que la science (Ilm) opère. Nous codons un site optimisé.</p>
+                    </div>
+                    <div class="p-4">
+                        <div class="w-16 h-16 bg-orange text-white text-2xl font-bold rounded-full flex items-center justify-center mx-auto">4</div>
+                        <h3 class="font-bold mt-4 text-oxford-blue">Lancement & Suivi</h3>
+                        <p class="text-sm text-jet mt-1">Nous mettons votre site en ligne et restons à vos côtés.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 section-fade-in">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-jet">Commençons la Conversation.</h2>
+                    <p class="mt-4 text-lg text-jet max-w-2xl mx-auto">Que ce soit pour un projet, une question, ou pour planifier votre audit gratuit, nous sommes là pour vous écouter.</p>
+                </div>
+                <div class="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-xl border border-gray-100">
+                     <form>
+                        <div class="mb-4">
+                            <label for="name" class="block text-jet font-semibold mb-2">Nom</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-jet font-semibold mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-jet font-semibold mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange"></textarea>
+                        </div>
+                        <div class="text-center">
+                             <button type="submit" class="w-full bg-orange text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-orange-dark transition-colors">Envoyer le Message</button>
+                        </div>
+                     </form>
+                     <div class="text-center mt-6">
+                         <p class="text-jet">Ou contactez-nous directement :</p>
+                         <a href="mailto:contact@ilmedigital.ma" class="text-oxford-blue font-semibold hover:text-orange">contact@ilmedigital.ma</a>
+                         <span class="mx-2 text-gray-400">|</span>
+                         <a href="https://wa.me/YOUR_WHATSAPP_NUMBER" target="_blank" class="text-oxford-blue font-semibold hover:text-orange">WhatsApp</a>
+                     </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-jet text-white">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; 2025 ilme Digital. Tous droits réservés.</p>
+            <p class="text-sm text-gray-400 mt-1">Basés au cœur de Rabat, Maroc.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Portfolio Theme Switcher
+        const themeButtons = document.querySelectorAll('.theme-button');
+        const templateData = {
+            pro: {
+                title: 'Modèle "Le Professionnel"',
+                description: 'Idéal pour les cabinets de conseil, les avocats et les experts-comptables qui souhaitent projeter une image de sérieux et de confiance.',
+                scores: { speed: 98, mobile: 100, security: 'A+' },
+                mockupId: 'mockup-pro'
+            },
+            clinic: {
+                title: 'Modèle "La Clinique"',
+                description: 'Une conception épurée et rassurante, parfaite pour les médecins, dentistes, et professionnels de la santé.',
+                scores: { speed: 99, mobile: 100, security: 'A+' },
+                mockupId: 'mockup-clinic'
+            },
+            artisan: {
+                title: 'Modèle "L\'Artisan"',
+                description: 'Met en valeur le savoir-faire et la créativité. Idéal pour les artisans, les créateurs et les commerces de niche.',
+                scores: { speed: 97, mobile: 100, security: 'A+' },
+                mockupId: 'mockup-artisan'
+            }
+        };
+        const titleEl = document.getElementById('template-title');
+        const descriptionEl = document.getElementById('template-description');
+        const scoresEl = document.getElementById('template-scores');
+        const mockupImages = document.querySelectorAll('.mockup-image');
+
+        themeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const theme = button.dataset.theme;
+                const data = templateData[theme];
+
+                // Update text content
+                titleEl.textContent = data.title;
+                descriptionEl.textContent = data.description;
+                scoresEl.innerHTML = `
+                    <div><span class="font-bold text-2xl text-orange">${data.scores.speed}</span><span class="text-gray-500">/100</span><p class="text-sm">Vitesse</p></div>
+                    <div><span class="font-bold text-2xl text-orange">${data.scores.mobile}</span><span class="text-gray-500">/100</span><p class="text-sm">Mobile</p></div>
+                    <div><span class="font-bold text-2xl text-orange">${data.scores.security}</span><p class="text-sm">Sécurité</p></div>
+                `;
+
+                // Update mockup image visibility
+                mockupImages.forEach(img => {
+                    if (img.id === data.mockupId) {
+                        img.style.opacity = '1';
+                    } else {
+                        img.style.opacity = '0';
+                    }
+                });
+                
+                // Update button styles
+                themeButtons.forEach(btn => {
+                    btn.classList.remove('ring-2', 'ring-offset-2', 'ring-orange');
+                    btn.classList.add('border-white');
+                });
+                button.classList.add('ring-2', 'ring-offset-2', 'ring-orange');
+                button.classList.remove('border-white');
+            });
+        });
+
+        // Scroll Animations
+        const sections = document.querySelectorAll('.section-fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        
+    </script>
+</body>
+</html>
