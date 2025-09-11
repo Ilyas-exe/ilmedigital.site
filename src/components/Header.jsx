@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-scroll'; // Import Link from react-scroll
+import { Link } from 'react-scroll';
+import logo from '../assets/logo.webp'; // Step 1: Import the logo image
 
 function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,11 +16,10 @@ function Header() {
         <header className="bg-white/80 backdrop-blur-md sticky top-0 z-50">
             <div className="container mx-auto px-6 py-4">
                 <div className="flex items-center justify-between">
-                    {/* Logo */}
-                    <Link to="accueil" smooth={true} duration={500} className="cursor-pointer text-3xl font-bold">
-                        <span className="gradient-logo">
-                            ilme Digital
-                        </span>
+                    
+                    {/* Step 2: Use the imported logo in an <img> tag */}
+                    <Link to="accueil" smooth={true} duration={500} className="cursor-pointer">
+                        <img src={logo} alt="ilme Digital Logo" className="h-8 w-auto" />
                     </Link>
 
                     {/* Desktop Navigation */}
