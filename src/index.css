@@ -1,7 +1,11 @@
-/* src/index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Adding smooth scroll behavior for the whole page */
+html {
+  scroll-behavior: smooth;
+}
 
 .gradient-logo {
   background: linear-gradient(to right, #2D2D2D, #0A2647, #FFA500);

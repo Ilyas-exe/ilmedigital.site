@@ -7,19 +7,20 @@ import Portfolio from './components/Portfolio';
 import Process from './components/Process';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import AnimatedSection from './components/AnimatedSection';
 
 function App() {
   return (
-    <div className="antialiased text-jet">
+    <div className="antialiased text-jet bg-white">
       <Header />
       <main>
         <Hero />
-        <ProblemSolution />
-        <Services />
-        <ServiceDetail />
-        <Portfolio />
-        <Process />
-        <Contact />
+        <AnimatedSection><ProblemSolution /></AnimatedSection>
+        <AnimatedSection><Services /></AnimatedSection>
+        <AnimatedSection><ServiceDetail /></AnimatedSection>
+        <AnimatedSection><Portfolio /></AnimatedSection>
+        <AnimatedSection><Process /></AnimatedSection>
+        <AnimatedSection><Contact /></AnimatedSection>
       </main>
       <Footer />
     </div>
